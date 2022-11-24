@@ -61,7 +61,7 @@ services:
     container_name: npm
     volumes:
       - ./src:/var/www/html
-    entrypoint: npm/entrypoint.sh
+    command: sh -c "npm install && npm run build"
     networks:
       - project
 
