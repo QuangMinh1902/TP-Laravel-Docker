@@ -50,6 +50,7 @@ services:
     container_name: composer
     volumes:
       - ./src:/var/www/html
+    entrypoint: composer-entrypoint/entrypoint.sh
     networks:
       - project
 

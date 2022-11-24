@@ -26,6 +26,11 @@
             background-color: transparent
         }
 
+        a#link {
+            border: 2px solid red;
+            box-shadow: 2px 2px #000;
+        }
+
         [hidden] {
             display: none
         }
@@ -433,38 +438,35 @@
                     </g>
                 </svg>
             </div>
+
             <br>
             {{-- échanger entre deux serveurs --}}
-            <?php
-            // if (!isset($_COOKIE["servername"])) {
-            //     echo "<h2> L'erreur </h2> <br>";
-            // }else{
-            //     if($_COOKIE["servername"]=="NGINX1"){
-            //     echo "<h2> Vous êtes sur SERVEUR 1 </h2> <br>";
-            ?>
-            {{-- <button><a href="http://localhost:8001">Nginx2 </a></button> --}}
-            <?php
-            //     }else if ($_COOKIE["servername"]=="NGINX2") {
-            //         echo "<h2> Vous êtes sur SERVEUR 2 </h2> <br>";
-            //
-            ?>
-            //
-            {{-- <button><a href="http://localhost:8000">Nginx1 </a></button> --}}
-            //
-            <?php
-            //  }}
-            ?>
+            <p>Vous êtes sur serveur: <span id="serveur"></span></p>
+            <a id="link" href=""></a>
 
             <script>
                 const cookieValue = document.cookie
                     .split('; ')
                     .find((row) => row.startsWith('servername='))
                     ?.split('=')[1];
-                console.log("Hello world!");
-                console.log("Hello world!"); -
+                document.getElementById('serveur').innerText = cookieValue;
+                if(cookieValue == "NGINX1" && window.location.href.includes("nginx1")){
+                document.getElementById("link").href = "http://nginx2.docker.localhost";
+                document.getElementById("link").innerText = "Nginx2";
+                } else if(cookieValue == "NGINX2" && window.location.href.includes("nginx2")){
+                document.getElementById("link").href = "http://nginx1.docker.localhost";
+                document.getElementById("link").innerText = "Nginx1";
+                }else if (cookieValue == "NGINX1") {
+                    document.getElementById("link").href = "http://localhost:8001";
+                    document.getElementById("link").innerText = "Nginx2";
+                } else if(cookieValue == "NGINX2"){
+                    document.getElementById("link").href = "http://localhost:8000";
+                    document.getElementById("link").innerText = "Nginx1";
+                }
+                console.log(window.location.href.includes("nginx1"));
             </script>
-
             {{-- =============================================== --}}
+
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
