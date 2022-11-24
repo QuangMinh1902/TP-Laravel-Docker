@@ -26,9 +26,10 @@
             background-color: transparent
         }
 
-        a#link {
+        a.url {
             border: 2px solid red;
             box-shadow: 2px 2px #000;
+            margin: 5px;
         }
 
         [hidden] {
@@ -442,7 +443,10 @@
             <br>
             {{-- échanger entre deux serveurs --}}
             <p>Vous êtes sur serveur: <span id="serveur"></span></p>
-            <a id="link" href=""></a>
+            <a id="link1" class="url" href=""></a>
+            <a id="link2" class="url" href=""></a>
+            <a id="link3" class="url" href=""></a>
+            <a id="link4" class="url" href=""></a>
 
             <script>
                 const cookieValue = document.cookie
@@ -450,20 +454,14 @@
                     .find((row) => row.startsWith('servername='))
                     ?.split('=')[1];
                 document.getElementById('serveur').innerText = cookieValue;
-                if(cookieValue == "NGINX1" && window.location.href.includes("nginx1")){
-                document.getElementById("link").href = "http://nginx2.docker.localhost";
-                document.getElementById("link").innerText = "Nginx2";
-                } else if(cookieValue == "NGINX2" && window.location.href.includes("nginx2")){
-                document.getElementById("link").href = "http://nginx1.docker.localhost";
-                document.getElementById("link").innerText = "Nginx1";
-                }else if (cookieValue == "NGINX1") {
-                    document.getElementById("link").href = "http://localhost:8001";
-                    document.getElementById("link").innerText = "Nginx2";
-                } else if(cookieValue == "NGINX2"){
-                    document.getElementById("link").href = "http://localhost:8000";
-                    document.getElementById("link").innerText = "Nginx1";
-                }
-                console.log(window.location.href.includes("nginx1"));
+                document.getElementById("link1").href = "http://localhost:8000";
+                document.getElementById("link1").innerText = "Nginx1";
+                document.getElementById("link2").href = "http://localhost:8001";
+                document.getElementById("link2").innerText = "Nginx2";
+                document.getElementById("link3").href = "http://nginx1.docker.localhost";
+                document.getElementById("link3").innerText = "Traefik1";
+                document.getElementById("link4").href = "http://nginx2.docker.localhost";
+                document.getElementById("link4").innerText = "Traefik2";
             </script>
             {{-- =============================================== --}}
 
@@ -551,7 +549,8 @@
                                     href="https://forge.laravel.com" class="underline">Forge</a>, <a
                                     href="https://vapor.laravel.com" class="underline">Vapor</a>, <a
                                     href="https://nova.laravel.com" class="underline">Nova</a>, and <a
-                                    href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects
+                                    href="https://envoyer.io" class="underline">Envoyer</a> help you take your
+                                projects
                                 to the next level. Pair them with powerful open source libraries like <a
                                     href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a
                                     href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a
