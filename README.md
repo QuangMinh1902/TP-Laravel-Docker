@@ -1,15 +1,17 @@
 # !!! Please read these notes !!! 
 1. J'ai mis fichier .env dans /src qui contient l'application laravel
 
-2. Si vous travaillez sur linux, peut-être que tu auras ce problème de droit: "The stream or file:/var/www/html/storage/logs/laravel.log" could not be opened in append mode...
-La solution c'est qu'on va sur le dossier storage dans /src dans le terminal et exécuter: chmod -R 777 . 
+2. Si vous travaillez sur linux, peut-être que tu auras ce problème de droit:
+ 
+![Screenshot from 2022-11-25 21-29-55](https://user-images.githubusercontent.com/59959039/204053111-24f11cb6-c43a-4e6b-854a-5de0b57df702.png)
 
-file:///home/quangminh/Pictures/Screenshots/Screenshot%20from%202022-11-25%2021-29-55.png
+La solution c'est qu'on va au dossier storage dans /src sur le terminal et exécuter: chmod -R 777 . 
+
 
 
 3. Dans le fichier configuration nginx, j'ai oublié d'expliquer concrètement une ligne : 
        fastcgi_pass $BACKEND:9000;
-   Ici, $BACKEND c'est le nom du service PHP et avec "entrypoint" il est remplacé par la valeur que je déclare dans "environment" 
+   - Ici, $BACKEND c'est le nom du service PHP et avec "entrypoint" il est remplacé par la valeur que je déclare dans "environment" 
 
 # Diagramme 
 
