@@ -4,7 +4,7 @@
 2. Si vous travaillez sur linux, peut-être que tu auras ce problème de droit: "The stream or file:/var/www/html/storage/logs/laravel.log" could not be opened in append mode...
 La solution c'est qu'on va sur le dossier storage dans /src dans le terminal et exécuter: chmod -R 777 . 
 
-file:///home/quangminh/Downloads/316602567_1358161278322518_7608384947563627441_n.jpg
+file:///home/quangminh/Pictures/Screenshots/Screenshot%20from%202022-11-25%2021-29-55.png
 
 
 3. Dans le fichier configuration nginx, j'ai oublié d'expliquer concrètement une ligne : 
