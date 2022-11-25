@@ -10,4 +10,4 @@ La solution c'est qu'on va sur le dossier storage dans /src dans le terminal et 
 
 # Diagramme 
 
-recent:///45371d96d7cc4ec311db58ce63812492
+![Screenshot from 2022-11-25 21-20-00](https://user-images.githubusercontent.com/59959039/204052360-e4051ecc-bbdc-4bb2-a41b-b976b2cfd6dc.png)
