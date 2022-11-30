@@ -12,6 +12,9 @@ La solution c'est qu'on va au dossier storage dans /src sur le terminal et exéc
 3. Dans le fichier configuration nginx, j'ai oublié d'expliquer concrètement une ligne : 
        fastcgi_pass $BACKEND:9000;
    - Ici, $BACKEND c'est le nom du service PHP et avec "entrypoint" il est remplacé par la valeur que je déclare dans "environment" 
+   
+4. Exécuter cette commande dans le terminal pour créer le table "users" dans la base de donnée
+      - docker-compose exec app php artisan migrate:fresh --seed
 
 # Diagramme 
 
