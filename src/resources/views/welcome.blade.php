@@ -440,7 +440,8 @@
                 </svg>
             </div>
 
-            <br>                    
+            <br> 
+                                   
             <p>Vous êtes sur serveur: <span id="serveur"></span></p>
             <a id="link1" class="url" href=""></a>
             <a id="link2" class="url" href=""></a>
