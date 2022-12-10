@@ -440,14 +440,12 @@
                 </svg>
             </div>
 
-            <br>
-            {{-- échanger entre deux serveurs --}}
+            <br>                    
             <p>Vous êtes sur serveur: <span id="serveur"></span></p>
             <a id="link1" class="url" href=""></a>
             <a id="link2" class="url" href=""></a>
             <a id="link3" class="url" href=""></a>
             <a id="link4" class="url" href=""></a>
-
             <script>
                 const cookieValue = document.cookie
                     .split('; ')
@@ -463,8 +461,6 @@
                 document.getElementById("link4").href = "http://nginx2.docker.localhost";
                 document.getElementById("link4").innerText = "Traefik2";
             </script>
-            {{-- =============================================== --}}
-
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
