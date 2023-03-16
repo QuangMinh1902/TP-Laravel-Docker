@@ -1,15 +1,7 @@
-# !!! Please read these notes !!! 
-1. J'ai mis fichier .env dans /src qui contient l'application laravel
-
-2. Si vous travaillez sur linux, peut-être que tu auras ce problème de droit:
- 
-![Screenshot from 2022-11-25 21-29-55](https://user-images.githubusercontent.com/59959039/204053111-24f11cb6-c43a-4e6b-854a-5de0b57df702.png)
-
-La solution c'est qu'on va au dossier storage dans /src sur le terminal et exécuter: chmod -R 777 . 
+* J'ai mis le fichier .env dans /src qui contient l'application laravel
    
-3. Exécuter cette commande dans le terminal pour créer le table "users" dans la base de donnée
-      - docker-compose exec app php artisan migrate:fresh --seed
+* Exécuter cette commande dans le terminal pour créer le table "users" dans la base de donnée : docker-compose exec app php artisan migrate:fresh --seed
 
-# Diagramme 
+* Diagramme 
 
 ![Screenshot from 2022-11-25 21-20-00](https://user-images.githubusercontent.com/59959039/204052360-e4051ecc-bbdc-4bb2-a41b-b976b2cfd6dc.png)
